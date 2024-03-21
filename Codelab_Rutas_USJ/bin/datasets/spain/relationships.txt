@@ -1,0 +1,130 @@
+Vitoria-Gasteiz;Logroño;47.01891187073324
+Vitoria-Gasteiz;Bilbao;49.282117699052705
+Vitoria-Gasteiz;San Sebastián;77.1907798244186
+Vitoria-Gasteiz;Pamplona;84.34224252887493
+Vitoria-Gasteiz;Palencia;177.86408386259842
+Vitoria-Gasteiz;Zaragoza;199.37680322852353
+Vitoria-Gasteiz;Oviedo;262.8483393354064
+Albacete;Murcia;128.7877348014984
+Albacete;Alicante;139.3962483686338
+Albacete;Teruel;163.01561437445267
+Albacete;Ciudad Real;178.1144699669106
+Albacete;Castellón de la Plana;191.1065154965318
+Albacete;Madrid;223.5036573831343
+Albacete;Almería;1273.4935533339747
+Albacete;Cádiz;476.6576300059213
+Alicante;Murcia;69.25761376314614
+Alicante;Castellón de la Plana;186.1986230386666
+Alicante;Teruel;228.59344905992933
+Alicante;Ciudad Real;306.422415851944
+Alicante;Tarragona;342.1153353215384
+Alicante;Almería;1173.1867067359976
+Alicante;Soria;3427.4077292076254
+Almería;Málaga;1141.0563177840174
+Almería;Murcia;1147.9268109148416
+Almería;Cádiz;1227.4183770833708
+Almería;Sevilla;1283.0238663123437
+Oviedo;Palencia;183.85723991191364
+Oviedo;La Coruña;207.3510754076775
+Oviedo;Valladolid;210.9144268514383
+Oviedo;Bilbao;236.64517666350937
+Oviedo;Pontevedra;249.39849527175755
+Ávila;Segovia;57.96770305496946
+Ávila;Madrid;86.78007710705886
+Ávila;Salamanca;89.67424167924604
+Ávila;Valladolid;111.55493987399936
+Ávila;Palencia;152.4817398496568
+Ávila;Ciudad Real;196.55043500940897
+Ávila;Badajoz;277.64880959780083
+Ávila;Huelva;425.81352086286375
+Ávila;La Coruña;431.13230872494586
+Ávila;Pontevedra;383.8583723179945
+Ávila;Sevilla;379.6519031139979
+Badajoz;Huelva;181.2923782993966
+Badajoz;Sevilla;186.7751227935864
+Badajoz;Salamanca;257.35706947065034
+Badajoz;Ciudad Real;264.7994134110154
+Badajoz;Cádiz;267.5101528856673
+Badajoz;Málaga;328.8110710079694
+Badajoz;Santa Cruz de Tenerife;1439.517586019097
+Barcelona;Tarragona;82.69992002540225
+Barcelona;Gerona;85.65879065809845
+Barcelona;Lérida;131.15518284322204
+Barcelona;Castellón de la Plana;242.78466930222513
+Barcelona;Zaragoza;256.5087623709241
+Barcelona;Teruel;299.3504642488849
+Barcelona;Soria;3186.161400034602
+Cádiz;Huelva;98.42725873336161
+Cádiz;Sevilla;98.91933302224069
+Cádiz;Málaga;168.79183906026043
+Cádiz;Ciudad Real;343.36717685896195
+Cádiz;Santa Cruz de Tenerife;1293.135502520444
+Castellón de la Plana;Teruel;99.69442846135941
+Castellón de la Plana;Tarragona;166.4743002396976
+Castellón de la Plana;Lérida;190.11115034020534
+Castellón de la Plana;Zaragoza;198.68457395178854
+Castellón de la Plana;Gerona;326.95695575547586
+Castellón de la Plana;Murcia;241.44898562637232
+Castellón de la Plana;Soria;3374.963015527565
+Ciudad Real;Madrid;160.4517645888645
+Ciudad Real;Segovia;219.1422357556317
+Ciudad Real;Sevilla;253.41365241460207
+Ciudad Real;Málaga;255.58157750184793
+Ciudad Real;Huelva;327.94149592131527
+Ciudad Real;Murcia;266.65952734004674
+Ciudad Real;Santa Cruz de Tenerife;1630.4579650236567
+Gerona;Tarragona;162.2461003716666
+Gerona;Lérida;185.89847421261908
+Gerona;Zaragoza;309.2101729015977
+Gerona;Teruel;376.01143362621116
+Gerona;Soria;3134.8242860156383
+San Sebastián;Pamplona;62.39160689594219
+San Sebastián;Bilbao;76.26243869637013
+San Sebastián;Logroño;102.3337801596902
+San Sebastián;Zaragoza;206.65714295728114
+San Sebastián;Palencia;253.82873536190436
+Huelva;Sevilla;86.30717663684149
+Huelva;Málaga;232.32653492932081
+Huelva;Santa Cruz de Tenerife;1305.618634417784
+La Coruña;Pontevedra;105.1817767439112
+La Coruña;Salamanca;349.8636009591246
+La Coruña;Palencia;350.47717725548284
+La Coruña;Valladolid;357.0979137103042
+Logroño;Pamplona;75.91849106456462
+Logroño;Bilbao;96.2952816997701
+Logroño;Zaragoza;157.6264516923882
+Logroño;Palencia;178.94568256504448
+Logroño;Segovia;218.47349614157642
+Logroño;Valladolid;208.6222896428036
+Lérida;Tarragona;75.84794249844481
+Lérida;Zaragoza;126.10075666127814
+Lérida;Teruel;203.42936196648148
+Lérida;Pamplona;230.55603428724643
+Lérida;Soria;3315.033234422857
+Madrid;Segovia;68.64600625412078
+Madrid;Valladolid;161.8832224224878
+Madrid;Salamanca;176.19152803451547
+Madrid;Palencia;190.94595307185043
+Madrid;Teruel;220.0444986390489
+Málaga;Sevilla;158.01663271389498
+Málaga;Murcia;323.0685183428128
+Málaga;Santa Cruz de Tenerife;1436.7997919100685
+Murcia;Teruel;262.1499424133872
+Pamplona;Bilbao;114.5034624236442
+Pamplona;Zaragoza;144.26667022296297
+Palencia;Valladolid;43.42503279358221
+Palencia;Segovia;123.7506738797049
+Palencia;Salamanca;150.15217377434527
+Palencia;Pontevedra;340.7286170803489
+Palencia;Bilbao;190.67314137125823
+Pontevedra;Salamanca;295.6482453183326
+Pontevedra;Valladolid;334.2850009198368
+Salamanca;Valladolid;109.6368278978514
+Salamanca;Segovia;129.82383039497924
+Santa Cruz de Tenerife;Sevilla;1377.1600328641136
+Segovia;Valladolid;93.25779498381664
+Soria;Tarragona;3263.1659694600435
+Tarragona;Zaragoza;187.78738866893963
+Tarragona;Teruel;216.6690816928219
+Teruel;Zaragoza;146.47401628245944
+Valladolid;Bilbao;231.55865572001795
