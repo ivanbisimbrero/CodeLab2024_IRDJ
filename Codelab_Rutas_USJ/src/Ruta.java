@@ -1,4 +1,4 @@
-public class Ruta implements Comparable{
+public class Ruta{
 
     Ciudad origen;
     Ciudad destino;
@@ -11,7 +11,7 @@ public class Ruta implements Comparable{
         this.tiempoTotalViaje = tiempoTotalViaje;
         this.costeViaje = costeViaje;
     }
-
+/* 
     @Override
     public int compareTo(Object o) {
         if (!(o instanceof Ruta)) {
@@ -25,5 +25,5 @@ public class Ruta implements Comparable{
             return Integer.compare(this.tiempoTotalViaje, otraRuta.tiempoTotalViaje);
         }
     }
-
+*/
 }

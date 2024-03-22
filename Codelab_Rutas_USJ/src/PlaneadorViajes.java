@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 
 public class PlaneadorViajes {
     int budget;
@@ -46,61 +47,61 @@ public class PlaneadorViajes {
         }
 
         this.origen = cities.get(0);
-        this.actual = null;
+        this.actual = this.origen;
 
     }
 
     public void solve() {
-        Ciudad current = null;
         
-        while(actual.equals(origen)) {
+        while(bestRoute.size() < cities.size()) {
             ArrayList<Ruta> posiblesDestinos = new ArrayList<Ruta>();
-            if(bestRoute.isEmpty()){
-                current = origen;
-                this.bestRoute.add(current);
-            } else {
-                current = actual;
-            }
-            for(Ruta ruta : routes) {
-                if(ruta.origen.name.equals(current.name)) {
+
+            for(Ruta ruta : this.routes) {
+                if(ruta.origen.equals(actual)) {
                     posiblesDestinos.add(ruta);
                 }
             }
-            Collections.sort(posiblesDestinos);
+
+            sortDestinos(posiblesDestinos); //Al mínimo coste
+
             while(!posiblesDestinos.isEmpty()){
-                if(!checkCityVisited(posiblesDestinos.get(0).destino)){
+                if(!cityVisited(posiblesDestinos.get(0).destino)){
                     this.bestRoute.add(posiblesDestinos.get(0).destino);
+                    markAsVisited(posiblesDestinos.get(0).destino);
                     break;
                 } else {
                     this.bestRoute.remove(posiblesDestinos.get(0).destino);
+                    sortDestinos(posiblesDestinos); //Volver a ordenar al mínimo
                 }
             }
+
+            //El grafo proporcionado no puede hacer un ciclo euleriano
+            if(posiblesDestinos.isEmpty()){
+                throw new Error("El grafo no puede ser recorrido solo una vez por cada nodo");
+            }
+
             this.actual = posiblesDestinos.get(0).destino;
             posiblesDestinos.clear();
         }
+
         this.bestRoute.add(origen);
     }
 
-    public boolean checkCityVisited(Ciudad city){
-        for(Ciudad cCity: this.cities){
-            if(cCity.equals(city)){
-                return true; //Visited
+    private void sortDestinos(ArrayList<Ruta> posiblesDestinos){
+        Collections.sort(posiblesDestinos, new Comparator<Ruta>() {
+            @Override
+            public int compare(Ruta ruta1, Ruta ruta2) {
+                return Integer.compare(ruta1.costeViaje, ruta2.costeViaje);
             }
-        }
-        return false; //Not visited
+        });
     }
 
-    public void updateCitiesRoute(Ciudad city){
-        this.cities.add(city);
+    public boolean cityVisited(Ciudad city){
+        return city.visited;
     }
 
-    public boolean allVisitCities(ArrayList<Ciudad> allCities){
-        for(Ciudad cCity: allCities){
-            if(!checkCityVisited(cCity)){
-                return false;
-            }
-        }
-        return true;
+    public void markAsVisited(Ciudad city){
+        city.visited=true;
     }
 
     public void writeResult() {

@@ -13,7 +13,7 @@ public class Ciudad {
     public boolean equals(Object anotherObject) {
         if(anotherObject instanceof Ciudad) {
             Ciudad c = (Ciudad)anotherObject;
-            return this.name.equals(c);
+            return this.name.equals(c.name);
         }
         return false;
     }
