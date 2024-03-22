@@ -21,7 +21,7 @@ public class PlaneadorViajes {
         this.routes = new ArrayList<Ruta>();
         this.bestRoute = new ArrayList<Ciudad>();
         
-        try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/simple/ciudades.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/ciudades.txt"))) {
             String budgetString = reader.readLine();
             this.budget = Integer.parseInt(budgetString);
             String linea = reader.readLine();
@@ -34,12 +34,12 @@ public class PlaneadorViajes {
             e.printStackTrace();
         }
 
-        try(BufferedReader reader = new BufferedReader(new FileReader("./datasets/simple/rutas.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/rutas.txt"))) {
             String linea = reader.readLine();
             while(linea != null) {
-                System.out.println(linea);
+                //System.out.println(linea);
                 String[] regex = linea.split(";");
-                this.routes.add(new Ruta(new Ciudad(regex[0]), new Ciudad(regex[1]), Integer.parseInt(regex[2]), Integer.parseInt(regex[3])));
+                this.routes.add(new Ruta(findCityByName(regex[0]), findCityByName(regex[1]), Integer.parseInt(regex[2]), Integer.parseInt(regex[3])));
                 linea = reader.readLine();
             }
         } catch (IOException e) {
@@ -47,8 +47,8 @@ public class PlaneadorViajes {
         }
 
         this.origen = cities.get(0);
+        this.bestRoute.add(this.origen);
         this.actual = this.origen;
-
     }
 
     public void solve() {
@@ -63,15 +63,15 @@ public class PlaneadorViajes {
             }
 
             sortDestinos(posiblesDestinos); //Al mínimo coste
-
+            //System.out.println(posiblesDestinos.get(0).destino.name);
             while(!posiblesDestinos.isEmpty()){
                 if(!cityVisited(posiblesDestinos.get(0).destino)){
+                    //System.out.println(posiblesDestinos.get(0).destino.visited);
                     this.bestRoute.add(posiblesDestinos.get(0).destino);
                     markAsVisited(posiblesDestinos.get(0).destino);
                     break;
                 } else {
-                    this.bestRoute.remove(posiblesDestinos.get(0).destino);
-                    sortDestinos(posiblesDestinos); //Volver a ordenar al mínimo
+                    posiblesDestinos.remove(posiblesDestinos.get(0));
                 }
             }
 
@@ -84,7 +84,10 @@ public class PlaneadorViajes {
             posiblesDestinos.clear();
         }
 
-        this.bestRoute.add(origen);
+        System.out.println(isValidRoute(this.actual,this.origen));
+        if(isValidRoute(this.actual,this.origen)){
+            this.bestRoute.add(origen);
+        }
     }
 
     private void sortDestinos(ArrayList<Ruta> posiblesDestinos){
@@ -96,8 +99,26 @@ public class PlaneadorViajes {
         });
     }
 
+    public Ciudad findCityByName(String name) {
+        for (Ciudad city : this.cities) {
+            if (city.name.equals(name)) {
+                return city;
+            }
+        }
+        return null; // o puedes lanzar una excepción si prefieres
+    }
+
     public boolean cityVisited(Ciudad city){
         return city.visited;
+    }
+
+    public boolean isValidRoute(Ciudad origen, Ciudad destino) {
+        for(Ruta ruta: this.routes){
+            if(ruta.origen.equals(origen) && ruta.destino.equals(destino)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void markAsVisited(Ciudad city){
