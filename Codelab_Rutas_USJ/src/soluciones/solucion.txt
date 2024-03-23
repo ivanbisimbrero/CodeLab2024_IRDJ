@@ -16,36 +16,36 @@ Valencia
 Huesca
 Pamplona
 Logroño
-Vitoria
-San Sebastián
-Bilbao
 Santander
-Valladolid
-Madrid
+Bilbao
+San Sebastián
+Zaragoza
+Lérida
+Teruel
+Castellón de la Plana
+Tarragona
+Barcelona
+Gerona
+Palma de Mallorca
+Alicante
+Murcia
+Cuenca
+Albacete
+Jaén
+Almería
+Granada
+Córdoba
+Málaga
+Ciudad Real
 �?vila
 Salamanca
 Badajoz
 Cáceres
 Huelva
-Málaga
-Granada
-Córdoba
-Jaén
-Almería
-Murcia
-Alicante
-Castellón de la Plana
-Tarragona
-Lérida
-Teruel
-Zaragoza
-Cuenca
-Albacete
-Ciudad Real
 Sevilla
 Cádiz
-Palma de Mallorca
-Barcelona
-Gerona
+Madrid
+Valladolid
+Santa Cruz de Tenerife
 Las Palmas de Gran Canaria
 Vitoria

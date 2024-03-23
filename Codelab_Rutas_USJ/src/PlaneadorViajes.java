@@ -4,9 +4,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
 
 public class PlaneadorViajes {
     int budget;
@@ -48,6 +50,7 @@ public class PlaneadorViajes {
 
         this.origen = cities.get(0);
         this.bestRoute.add(this.origen);
+        markAsVisited(this.origen);;
         this.actual = this.origen;
     }
 
@@ -134,5 +137,9 @@ public class PlaneadorViajes {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        //Comprobación final de si es el mismo número de ciudades
+        Set<Ciudad> sBestRoutes = new HashSet<>(this.bestRoute);
+        System.out.println("Ciudades: "+this.cities.size()+"\nBest Route: "+sBestRoutes.size());
     }
 }
