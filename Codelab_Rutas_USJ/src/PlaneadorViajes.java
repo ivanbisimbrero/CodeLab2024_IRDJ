@@ -1,7 +1,10 @@
 import java.io.BufferedReader;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -23,7 +26,7 @@ public class PlaneadorViajes {
         this.routes = new ArrayList<Ruta>();
         this.bestRoute = new ArrayList<Ciudad>();
         
-        try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/ciudades.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/ciudades.txt",StandardCharsets.UTF_8))) {
             String budgetString = reader.readLine();
             this.budget = Integer.parseInt(budgetString);
             String linea = reader.readLine();
@@ -36,7 +39,7 @@ public class PlaneadorViajes {
             e.printStackTrace();
         }
 
-        try(BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/rutas.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/rutas.txt",StandardCharsets.UTF_8))) {
             String linea = reader.readLine();
             while(linea != null) {
                 //System.out.println(linea);
@@ -48,7 +51,7 @@ public class PlaneadorViajes {
             e.printStackTrace();
         }
 
-        this.origen = cities.get(0);
+        this.origen = cities.get(49);
         this.bestRoute.add(this.origen);
         markAsVisited(this.origen);;
         this.actual = this.origen;
@@ -108,7 +111,7 @@ public class PlaneadorViajes {
                 return city;
             }
         }
-        return null; // o puedes lanzar una excepción si prefieres
+        return null;
     }
 
     public boolean cityVisited(Ciudad city){
@@ -130,7 +133,7 @@ public class PlaneadorViajes {
 
     public void writeResult() {
         System.out.println("\tEscribiendo resultados en el fichero de salida");
-        try (FileWriter writer = new FileWriter("./soluciones/solucion.txt")) {
+        try (FileWriter writer = new FileWriter("./soluciones/solucion.txt", StandardCharsets.UTF_8)) {
             for(int i = 0; i < bestRoute.size(); i++) {
                 writer.write(bestRoute.get(i).name + "\n");
             }
@@ -140,6 +143,7 @@ public class PlaneadorViajes {
 
         //Comprobación final de si es el mismo número de ciudades
         Set<Ciudad> sBestRoutes = new HashSet<>(this.bestRoute);
-        System.out.println("Ciudades: "+this.cities.size()+"\nBest Route: "+sBestRoutes.size());
+        System.out.println("\nBest Route Array: "+this.bestRoute.size());
+        System.out.println("Ciudades: "+this.cities.size()+"\nBest Route Set: "+sBestRoutes.size());
     }
 }

@@ -1,4 +1,6 @@
-Vitoria
+Zaragoza
+Pamplona
+Logroño
 Burgos
 León
 Zamora
@@ -14,19 +16,10 @@ Toledo
 Guadalajara
 Valencia
 Huesca
-Pamplona
-Logroño
-Santander
-Bilbao
-San Sebastián
-Zaragoza
+Tarragona
 Lérida
 Teruel
 Castellón de la Plana
-Tarragona
-Barcelona
-Gerona
-Palma de Mallorca
 Alicante
 Murcia
 Cuenca
@@ -37,15 +30,22 @@ Granada
 Córdoba
 Málaga
 Ciudad Real
-�?vila
+Ávila
 Salamanca
 Badajoz
 Cáceres
 Huelva
 Sevilla
 Cádiz
-Madrid
-Valladolid
-Santa Cruz de Tenerife
-Las Palmas de Gran Canaria
+Palma de Mallorca
+Barcelona
+Gerona
+San Sebastián
+Bilbao
+Santander
 Vitoria
+Valladolid
+Madrid
+Las Palmas de Gran Canaria
+Santa Cruz de Tenerife
+Zaragoza
