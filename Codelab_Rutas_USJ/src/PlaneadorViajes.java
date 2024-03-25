@@ -15,17 +15,20 @@ import java.util.HashSet;
 
 public class PlaneadorViajes {
     int budget;
+    int costRoute;
+    int timeRoute;
     List<Ciudad> cities;
     List<Ruta> routes;
     List<Ciudad> bestRoute;
     Ciudad origen;
     Ciudad actual;
 
-    public PlaneadorViajes() {
+    public PlaneadorViajes(int index) {
         this.cities = new ArrayList<Ciudad>();
         this.routes = new ArrayList<Ruta>();
         this.bestRoute = new ArrayList<Ciudad>();
-        
+        this.costRoute = 0;
+        this.timeRoute = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/ciudades.txt",StandardCharsets.UTF_8))) {
             String budgetString = reader.readLine();
             this.budget = Integer.parseInt(budgetString);
@@ -51,9 +54,9 @@ public class PlaneadorViajes {
             e.printStackTrace();
         }
 
-        this.origen = cities.get(49);
+        this.origen = cities.get(index);
         this.bestRoute.add(this.origen);
-        markAsVisited(this.origen);;
+        markAsVisited(this.origen);
         this.actual = this.origen;
     }
 
@@ -68,20 +71,27 @@ public class PlaneadorViajes {
                 }
             }
 
-            sortDestinos(posiblesDestinos); //Al mínimo coste
-            //System.out.println(posiblesDestinos.get(0).destino.name);
+            //Buscar las rutas más eficientes en tiempo que se adapten al presupuesto
+            if(this.costRoute >= this.budget/2){
+                sortDestinosCost(posiblesDestinos); //Minimizar presupuesto cuando empieza a importar
+            } else{
+                sortDestinosTime(posiblesDestinos); //Empiezas minimizando el tiempo
+            }
+
             while(!posiblesDestinos.isEmpty()){
                 if(!cityVisited(posiblesDestinos.get(0).destino)){
                     //System.out.println(posiblesDestinos.get(0).destino.visited);
                     this.bestRoute.add(posiblesDestinos.get(0).destino);
                     markAsVisited(posiblesDestinos.get(0).destino);
+                    this.costRoute += posiblesDestinos.get(0).costeViaje;
+                    this.timeRoute += posiblesDestinos.get(0).tiempoTotalViaje;
                     break;
                 } else {
                     posiblesDestinos.remove(posiblesDestinos.get(0));
                 }
             }
 
-            //El grafo proporcionado no puede hacer un ciclo euleriano
+            //El grafo proporcionado no puede hacer un ciclo hamiltoniano
             if(posiblesDestinos.isEmpty()){
                 throw new Error("El grafo no puede ser recorrido solo una vez por cada nodo");
             }
@@ -90,13 +100,32 @@ public class PlaneadorViajes {
             posiblesDestinos.clear();
         }
 
-        System.out.println(isValidRoute(this.actual,this.origen));
-        if(isValidRoute(this.actual,this.origen)){
+        //System.out.println(isValidRoute(this.actual,this.origen));
+        Ruta finalR = findRouteByName(this.actual,this.origen);
+        if(finalR != null){
             this.bestRoute.add(origen);
+            this.costRoute += finalR.costeViaje;
         }
+
+        //VALIDACIONES DE PReSUPUESTO
+        if(this.costRoute <= this.budget){
+            System.out.println("COSTE RUTA VALIDA EN "+this.origen.name+": "+this.costRoute+"; "+this.timeRoute+" horas");
+        } else {
+            System.out.println(this.costRoute);
+        }
+
     }
 
-    private void sortDestinos(ArrayList<Ruta> posiblesDestinos){
+    private void sortDestinosTime(ArrayList<Ruta> posiblesDestinos){
+        Collections.sort(posiblesDestinos, new Comparator<Ruta>() {
+            @Override
+            public int compare(Ruta ruta1, Ruta ruta2) {
+                return Integer.compare(ruta1.tiempoTotalViaje, ruta2.tiempoTotalViaje);
+            }
+        });
+    }
+
+    private void sortDestinosCost(ArrayList<Ruta> posiblesDestinos){
         Collections.sort(posiblesDestinos, new Comparator<Ruta>() {
             @Override
             public int compare(Ruta ruta1, Ruta ruta2) {
@@ -118,13 +147,13 @@ public class PlaneadorViajes {
         return city.visited;
     }
 
-    public boolean isValidRoute(Ciudad origen, Ciudad destino) {
+    public Ruta findRouteByName(Ciudad origen, Ciudad destino) {
         for(Ruta ruta: this.routes){
             if(ruta.origen.equals(origen) && ruta.destino.equals(destino)){
-                return true;
+                return ruta;
             }
         }
-        return false;
+        return null;
     }
 
     public void markAsVisited(Ciudad city){
@@ -142,8 +171,8 @@ public class PlaneadorViajes {
         }
 
         //Comprobación final de si es el mismo número de ciudades
-        Set<Ciudad> sBestRoutes = new HashSet<>(this.bestRoute);
-        System.out.println("\nBest Route Array: "+this.bestRoute.size());
-        System.out.println("Ciudades: "+this.cities.size()+"\nBest Route Set: "+sBestRoutes.size());
+        //Set<Ciudad> sBestRoutes = new HashSet<>(this.bestRoute);
+        //System.out.println("\nBest Route Array: "+this.bestRoute.size());
+        //System.out.println("Ciudades: "+this.cities.size()+"\nBest Route Set: "+sBestRoutes.size());
     }
 }

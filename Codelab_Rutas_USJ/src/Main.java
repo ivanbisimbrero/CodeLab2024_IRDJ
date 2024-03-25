@@ -1,9 +1,13 @@
 public class Main {
 
     public static void main(String[] args) {
-        PlaneadorViajes p = new PlaneadorViajes();
-        p.solve();
-        p.writeResult();
+        for (int i=0; i<50;i++){
+            PlaneadorViajes p = new PlaneadorViajes(i);
+            p.solve();
+            if(i == 5){ //Best route found in ÁVILA
+                p.writeResult();
+            }
+        }
     }
 
 }

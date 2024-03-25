@@ -1,51 +1,51 @@
+Ávila
+Segovia
+Madrid
+Toledo
+Cuenca
+Albacete
+Murcia
+Alicante
+Valencia
+Palma de Mallorca
+Barcelona
+Tarragona
 Zaragoza
-Pamplona
+Soria
 Logroño
+Bilbao
+Santander
 Burgos
-León
+Palencia
+Valladolid
+Salamanca
 Zamora
 Orense
 Lugo
 Pontevedra
 La Coruña
 Oviedo
-Palencia
-Segovia
-Soria
-Toledo
+León
+Vitoria
+San Sebastián
+Pamplona
 Guadalajara
-Valencia
-Huesca
-Tarragona
-Lérida
 Teruel
 Castellón de la Plana
-Alicante
-Murcia
-Cuenca
-Albacete
-Jaén
+Lérida
+Gerona
+Huesca
 Almería
-Granada
+Jaén
 Córdoba
 Málaga
+Granada
 Ciudad Real
-Ávila
-Salamanca
+Sevilla
+Cádiz
 Badajoz
 Cáceres
 Huelva
-Sevilla
-Cádiz
-Palma de Mallorca
-Barcelona
-Gerona
-San Sebastián
-Bilbao
-Santander
-Vitoria
-Valladolid
-Madrid
-Las Palmas de Gran Canaria
 Santa Cruz de Tenerife
-Zaragoza
+Las Palmas de Gran Canaria
+Ávila
