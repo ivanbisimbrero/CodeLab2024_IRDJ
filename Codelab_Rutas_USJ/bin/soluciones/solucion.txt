@@ -1,8 +1,8 @@
-Ávila
-Segovia
-Madrid
-Toledo
-Cuenca
+Almería
+Granada
+Málaga
+Córdoba
+Jaén
 Albacete
 Murcia
 Alicante
@@ -18,7 +18,8 @@ Santander
 Burgos
 Palencia
 Valladolid
-Salamanca
+Madrid
+Ávila
 Zamora
 Orense
 Lugo
@@ -35,17 +36,16 @@ Castellón de la Plana
 Lérida
 Gerona
 Huesca
-Almería
-Jaén
-Córdoba
-Málaga
-Granada
+Cuenca
 Ciudad Real
-Sevilla
-Cádiz
+Toledo
+Salamanca
 Badajoz
 Cáceres
 Huelva
+Sevilla
+Cádiz
+Segovia
 Santa Cruz de Tenerife
 Las Palmas de Gran Canaria
-Ávila
+Almería

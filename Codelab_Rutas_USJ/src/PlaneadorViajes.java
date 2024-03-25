@@ -101,10 +101,12 @@ public class PlaneadorViajes {
         }
 
         //System.out.println(isValidRoute(this.actual,this.origen));
-        Ruta finalR = findRouteByName(this.actual,this.origen);
-        if(finalR != null){
+        ArrayList<Ruta> finalR = findRoutesByName(this.actual,this.origen);
+        sortDestinosTime(finalR);
+        if(!finalR.isEmpty()){
             this.bestRoute.add(origen);
-            this.costRoute += finalR.costeViaje;
+            this.costRoute += finalR.get(0).costeViaje;
+            this.timeRoute += finalR.get(0).tiempoTotalViaje;
         }
 
         //VALIDACIONES DE PReSUPUESTO
@@ -147,13 +149,14 @@ public class PlaneadorViajes {
         return city.visited;
     }
 
-    public Ruta findRouteByName(Ciudad origen, Ciudad destino) {
+    public ArrayList<Ruta> findRoutesByName(Ciudad origen, Ciudad destino) {
+        ArrayList<Ruta> rutas = new ArrayList<Ruta>();
         for(Ruta ruta: this.routes){
             if(ruta.origen.equals(origen) && ruta.destino.equals(destino)){
-                return ruta;
+                rutas.add(ruta);
             }
         }
-        return null;
+        return rutas;
     }
 
     public void markAsVisited(Ciudad city){
