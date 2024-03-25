@@ -10,6 +10,11 @@ public class Ciudad {
     }
 
     @Override
+    public String toString() {
+        return this.name;
+    }
+
+    @Override
     public boolean equals(Object anotherObject) {
         if(anotherObject instanceof Ciudad) {
             Ciudad c = (Ciudad)anotherObject;

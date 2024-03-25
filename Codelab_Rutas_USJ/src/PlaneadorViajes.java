@@ -20,6 +20,7 @@ public class PlaneadorViajes {
     List<Ciudad> cities;
     List<Ruta> routes;
     List<Ciudad> bestRoute;
+    List<Ruta> bestRoutePath;
     Ciudad origen;
     Ciudad actual;
 
@@ -27,6 +28,7 @@ public class PlaneadorViajes {
         this.cities = new ArrayList<Ciudad>();
         this.routes = new ArrayList<Ruta>();
         this.bestRoute = new ArrayList<Ciudad>();
+        this.bestRoutePath = new ArrayList<Ruta>();
         this.costRoute = 0;
         this.timeRoute = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader("./datasets/spain/ciudades.txt",StandardCharsets.UTF_8))) {
@@ -82,6 +84,7 @@ public class PlaneadorViajes {
                 if(!cityVisited(posiblesDestinos.get(0).destino)){
                     //System.out.println(posiblesDestinos.get(0).destino.visited);
                     this.bestRoute.add(posiblesDestinos.get(0).destino);
+                    this.bestRoutePath.add(posiblesDestinos.get(0));
                     markAsVisited(posiblesDestinos.get(0).destino);
                     this.costRoute += posiblesDestinos.get(0).costeViaje;
                     this.timeRoute += posiblesDestinos.get(0).tiempoTotalViaje;
@@ -105,6 +108,7 @@ public class PlaneadorViajes {
         sortDestinosTime(finalR);
         if(!finalR.isEmpty()){
             this.bestRoute.add(origen);
+            this.bestRoutePath.add(finalR.get(0));
             this.costRoute += finalR.get(0).costeViaje;
             this.timeRoute += finalR.get(0).tiempoTotalViaje;
         }
@@ -165,9 +169,16 @@ public class PlaneadorViajes {
 
     public void writeResult() {
         System.out.println("\tEscribiendo resultados en el fichero de salida");
-        try (FileWriter writer = new FileWriter("./soluciones/solucion.txt", StandardCharsets.UTF_8)) {
+        try (FileWriter writer = new FileWriter("./soluciones/solucion_ciudades.txt", StandardCharsets.UTF_8)) {
             for(int i = 0; i < bestRoute.size(); i++) {
                 writer.write(bestRoute.get(i).name + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (FileWriter writer = new FileWriter("./soluciones/solucion_rutas.txt", StandardCharsets.UTF_8)) {
+            for(int i = 0; i < bestRoutePath.size(); i++) {
+                writer.write(bestRoutePath.get(i).toString() + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();

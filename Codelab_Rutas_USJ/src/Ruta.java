@@ -11,6 +11,11 @@ public class Ruta{
         this.tiempoTotalViaje = tiempoTotalViaje;
         this.costeViaje = costeViaje;
     }
+
+    @Override
+    public String toString() {
+        return this.origen.toString() + ";" + this.destino.toString() + ";" + this.tiempoTotalViaje + ";" + this.costeViaje;
+    }
 /* 
     @Override
     public int compareTo(Object o) {

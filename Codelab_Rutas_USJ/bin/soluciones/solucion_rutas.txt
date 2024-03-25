@@ -1,0 +1,50 @@
+Almería;Granada;55;30
+Granada;Málaga;50;45
+Málaga;Córdoba;55;35
+Córdoba;Jaén;55;35
+Jaén;Albacete;60;40
+Albacete;Murcia;55;45
+Murcia;Alicante;45;45
+Alicante;Valencia;55;40
+Valencia;Palma de Mallorca;65;60
+Palma de Mallorca;Barcelona;60;35
+Barcelona;Tarragona;50;45
+Tarragona;Zaragoza;70;45
+Zaragoza;Soria;55;30
+Soria;Logroño;55;30
+Logroño;Bilbao;50;30
+Bilbao;Santander;50;35
+Santander;Burgos;55;30
+Burgos;Palencia;50;35
+Palencia;Valladolid;50;30
+Valladolid;Madrid;250;20
+Madrid;Ávila;195;20
+Ávila;Zamora;245;20
+Zamora;Orense;240;20
+Orense;Lugo;215;20
+Lugo;Pontevedra;215;20
+Pontevedra;La Coruña;205;20
+La Coruña;Oviedo;285;20
+Oviedo;León;190;20
+León;Vitoria;300;20
+Vitoria;San Sebastián;200;20
+San Sebastián;Pamplona;185;20
+Pamplona;Guadalajara;275;20
+Guadalajara;Teruel;230;20
+Teruel;Castellón de la Plana;205;20
+Castellón de la Plana;Lérida;290;20
+Lérida;Gerona;250;20
+Gerona;Huesca;300;20
+Huesca;Cuenca;315;25
+Cuenca;Ciudad Real;285;20
+Ciudad Real;Toledo;205;20
+Toledo;Salamanca;245;20
+Salamanca;Badajoz;335;20
+Badajoz;Cáceres;195;20
+Cáceres;Huelva;335;20
+Huelva;Sevilla;200;20
+Sevilla;Cádiz;215;20
+Cádiz;Segovia;465;25
+Segovia;Santa Cruz de Tenerife;1055;35
+Santa Cruz de Tenerife;Las Palmas de Gran Canaria;200;20
+Las Palmas de Gran Canaria;Almería;945;50
