@@ -115,7 +115,7 @@ public class PlaneadorViajes {
 
         //VALIDACIONES DE PReSUPUESTO
         if(this.costRoute <= this.budget){
-            System.out.println("COSTE RUTA VALIDA EN "+this.origen.name+": "+this.costRoute+"; "+this.timeRoute+" horas");
+            System.out.println("COSTE RUTA VALIDA EN "+this.origen.name+": "+this.costRoute+"; "+this.timeRoute+" minutos");
         } else {
             System.out.println(this.costRoute);
         }
